@@ -53,3 +53,35 @@ void set_col_4bit_dual(int foreground, int background)
 {
 	printf("\033[%d;%dm", foreground, background + 10);
 }
+void set_bold(int bold)
+{
+	printf("\033[%dm", bold ? 1 : 22);
+}
+void set_dim(int dim)
+{
+	printf("\033[%dm", dim ? 2 : 22);
+}
+void set_italic(int italic)
+{
+	printf("\033[%dm", italic ? 3 : 23);
+}
+void set_underline(int underline)
+{
+	printf("\033[%dm", underline ? 4 : 24);
+}
+void set_blink(int blink)
+{
+	printf("\033[%dm", blink ? 5 : 25);
+}
+void set_invert(int invert)
+{
+	printf("\033[%dm", invert ? 7 : 27);
+}
+void set_invisible(int invisible)
+{
+	printf("\033[%dm", invisible ? 8 : 28);
+}
+void set_strikethrough(int strikethrough)
+{
+	printf("\033[%dm", strikethrough ? 9 : 29);
+}

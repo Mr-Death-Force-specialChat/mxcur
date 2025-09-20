@@ -21,9 +21,33 @@ void mov_cur_backward(int n)
 {
 	printf("\033[%dD", n);
 }
-void clear_screen()
+void clear_screen() // returns to home position
 {
 	printf("\033[2J\033[H");
+}
+void erase_eos() // from cursor to end of screen
+{
+	printf("\033[0J");
+}
+void erase_bos() // from cursor to beginning of screen
+{
+	printf("\033[1J");
+}
+void clear_line()
+{
+	printf("\033[2K");
+}
+void erase_eol() // from cursor to end of line
+{
+	printf("\033[0K");
+}
+void erase_bol() // from cursor to beginning of line
+{
+	printf("\033[1K");
+}
+void alternate_buffer(int enable)
+{
+	printf("\033[?1049%c", enable ? 'h' : 'l');
 }
 void save_cur_pos() // NOTE: Most terminal emulators do not support save/restore cursor position.
 {
